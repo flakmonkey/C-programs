@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("Higher / Lower v1.0"); 
+	
+	// compute a random number 
+	
+	// keep asking the user for a nubmer, give them a higher or lower
+	// hint, and exit when they guess the number
+	
+	// Print out the number of guesses
+	
+	
+	
+	int count = 0;
+	
+	do {
+		printf("Hello\n");
+		count += 1;
+	} while (count < 10);
+	
+	return EXIT_SUCCESS;
+}
+	

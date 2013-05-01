@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Programming Assignment #7</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p align="center"><font size="4" face="Century Schoolbook"><b>COMSC137
+- C Programming</b></font></p>
+
+<p align="center"><font size="4" face="Century Schoolbook"><b>Programming
+Assignment #7 - </b><b><i>Matrix Operations Library</i></b></font></p>
+
+<p align="center"><font size="4" face="Century Schoolbook"><b>Date
+Due: 11/07/96</b></font></p>
+
+<hr>
+
+<p><font face="Century Schoolbook"><b>PROGRAM DESCRIPTION:</b></font></p>
+
+<p><font size="2" face="Century Schoolbook">Create a matrix
+operations library - a file containing a set of functions for handling
+matrices. Matrices are 2D arrays of (typically floating point) numbers.
+For example:</font></p>
+
+<p align="center"><font size="2" face="Century Schoolbook"><img
+src="prgass1.gif" align="middle" width="168" height="78">, or in
+general <img src="prgass29.gif" align="middle" width="180"
+height="78"></font></p>
+
+<p align="left"><font size="2" face="Century Schoolbook">&nbsp;Matrices
+are very common in engineering applications, where the individual
+elements of the array might, for example, represent voltages on a
+circuit board. </font></p>
+
+<p><font size="2" face="Century Schoolbook">Your library
+functions <b>must be able to handle matrices of any size</b>, <b>and
+must use pointer syntax when manipulating elements</b> (e.g. </font><font
+size="2" face="Courier New">*(ad + i*iC + j) *= dScalar; </font><font
+size="2" face="Century Schoolbook">, rather than</font><font
+size="2" face="Courier New"> ad[i][j] *= dScalar</font><font
+size="2" face="Century Schoolbook">). Your program should have 3
+files - </font><font size="2" face="Courier New">prog7.c</font><font
+size="2" face="Century Schoolbook">, </font><font size="2"
+face="Courier New">matrix.c</font><font size="2"
+face="Century Schoolbook">, and </font><font size="2"
+face="Courier New">matrix.h</font><font size="2"
+face="Century Schoolbook">. </font><font size="2"
+face="Courier New">matrix.c</font><font size="2"
+face="Century Schoolbook"> must contain (at least) the following
+set of functions and employ the given declaration (</font><font
+size="2" face="Courier New">*adA</font><font size="2"
+face="Century Schoolbook"> is a pointer to the 2D array of doubles, </font><font
+size="2" face="Courier New">iR</font><font size="2"
+face="Century Schoolbook"> and </font><font size="2"
+face="Courier New">iC</font><font size="2"
+face="Century Schoolbook"> are the # of rows and columns,
+respectively):</font></p>
+
+<blockquote>
+    <blockquote>
+        <ul>
+            <li><font size="2" face="Courier New">void MatPrint(
+                double *adA, int iR, int iC )</font><font
+                size="2" face="Century Schoolbook"> - prints matrix
+                A to the standard output.</font></li>
+            <li><font size="2" face="Courier New">void
+                MatScalarAdd( double *adA, int iR, int iC, double dScalar
+                )</font><font size="2" face="Century Schoolbook">
+                - adds </font><font size="2" face="Courier New">dScalar</font><font
+                size="2" face="Century Schoolbook"> to each
+                element of matrix A. For example:</font></li>
+            <li><font size="2" face="Courier New">void
+                MatScalarMult( double *adA, int iR, int iC,
+                double dScalar )</font><font size="2"
+                face="Century Schoolbook"> - multiplies each
+                element of matrix A by </font><font size="2"
+                face="Courier New">dScalar</font><font size="2"
+                face="Century Schoolbook">. </font></li>
+            <li><font size="2" face="Courier New">Double MatSum</font><font
+                size="2" face="Century Schoolbook">( </font><font
+                size="2" face="Courier New">double *adA, int iR, int
+                iC)</font><font size="2"
+                face="Century Schoolbook"> - returns the sum of
+                all of the matrices&#146; elements. </font></li>
+            <li><font size="2" face="Courier New">void MatAdd(
+                double *adA, double *adB, double *adC, int iR,
+                int iC)</font><font size="2"
+                face="Century Schoolbook"> - adds matrix A to
+                matrix B and stores the result in matrix C.</font></li>
+            <li><font size="2" face="Courier New">void MatMult(
+                double *adA, double *adB, double *adC, int iR,
+                int iCA, int iCB)</font><font size="2"
+                face="Century Schoolbook"> - multiplies matrix A
+                by matrix B and stores the result in matrix C.</font></li>
+        </ul>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Century Schoolbook"><b>The use of global
+variables is expressly forbidden!</b> </font><font size="2"
+face="Courier New">Matrix.h</font><font size="2"
+face="Century Schoolbook"> must contain function declarations for
+each of these functions. </font><font size="2" face="Courier New">Prog7.c</font><font
+size="2" face="Century Schoolbook"> should </font><font size="2"
+face="Courier New">#include &quot;matrix.h&quot;</font><font
+size="2" face="Century Schoolbook">, and simply have a </font><font
+size="2" face="Courier New">main()</font><font size="2"
+face="Century Schoolbook"> that tests each of the matrix
+functions. Hardcode the following operands into your main for testing
+purposes:</font></p>
+
+<p><font size="2" face="Century Schoolbook">&nbsp;</font><font
+size="2" face="Courier New">MatScalarAdd</font><font size="2"
+face="Century Schoolbook">: </font></p>
+
+<blockquote>
+    <p><font size="2" face="Century Schoolbook"><img
+    src="prgass56.gif" align="middle" width="200" height="78">
+    and </font><font size="2" face="Courier New">dScalar =
+    -21.193</font></p>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatScalarMult:</font><font
+size="2" face="Century Schoolbook"> </font></p>
+
+<blockquote>
+    <p><font size="2" face="Century Schoolbook"><img
+    src="prgass57.gif" align="middle" width="210" height="78">
+    and </font><font size="2" face="Courier New">dScalar = 0.003</font></p>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatSum</font><font size="2"
+face="Century Schoolbook">:</font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook"><img
+        src="prgass58.gif" width="215" height="78"></font></p>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatAdd</font><font size="2"
+face="Century Schoolbook">:</font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook"><img
+        src="prgass59.gif" width="160" height="78">, <img
+        src="prgass60.gif" width="168" height="78"> </font></p>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatMult</font><font size="2"
+face="Century Schoolbook">: </font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook"><img
+        src="prgass61.gif" width="160" height="78"> and <img
+        src="prgass62.gif" width="156" height="78"></font></p>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Century Schoolbook">Print the operand(s),
+operator, and output. Use your MatPrint() function to print any
+matrices. Redirect the output to prog7out.dat.&nbsp;</font></p>
+
+<p>&nbsp;</p>
+
+<p><font face="Century Schoolbook"><b>HINTS:</b></font><font
+size="2" face="Century Schoolbook"> </font></p>
+
+<p><font size="2" face="Century Schoolbook">Review the class
+notes on multi-dimensional arrays, especially <i>Storage of Variables
+and Multi-Dimensional Arrays in Memory</i> and <i>Using Pointers to Access
+Array Elements</i>.</font></p>
+
+<p>&nbsp;</p>
+
+<p><font face="Century Schoolbook"><b>FOR EXTRA CREDIT:</b></font><font
+size="2" face="Century Schoolbook">&nbsp;</font></p>
+
+<p><font size="2" face="Century Schoolbook">Add the following
+functions to your library</font><font size="3"
+face="Century Schoolbook">:</font></p>
+
+<p><font size="3" face="Century Schoolbook">&nbsp;</font></p>
+
+<blockquote>
+    <ul>
+        <li><font size="2" face="Courier New">int MatIsSym(
+            double *adA, int iR, int iC )</font><font size="2"
+            face="Century Schoolbook"> - returns 1 if the matrix
+            is symmetric, 0 otherwise. A matrix is symmetric if
+            and only if <img src="prgass63.gif" align="absmiddle"
+            width="58" height="28">for every <i>i</i> and <i>j</i>.</font></li>
+        <li><font size="2" face="Courier New">int MatIsDiag(
+            double *adA, int iR, int iC )</font><font size="2"
+            face="Century Schoolbook"> - returns 1 if the matrix
+            is diagonal, 0 otherwise. A matrix is diagonal if and
+            only if <img src="prgass64.gif" align="absmiddle"
+            width="50" height="28">for all <i>i != j</i>.</font></li>
+        <li><font size="2" face="Courier New">void</font><font
+            size="2" face="Century Schoolbook"> </font><font
+            size="2" face="Courier New">MatTranspose</font><font
+            size="2" face="Century Schoolbook">( </font><font
+            size="2" face="Courier New">double *adA, double
+            *adAT, int iR, int iC)</font><font size="2"
+            face="Century Schoolbook"> - stores the transpose of
+            matrix A in matrix AT. The transpose of a matrix is defined
+            such that <img src="prgass65.gif" align="absmiddle"
+            width="60" height="28">.</font></li>
+    </ul>
+    <p>&nbsp;</p>
+</blockquote>
+
+<p><font face="Century Schoolbook"><b>WHAT TO </b><b><i>EMAIL</i></b><b>
+IN (</b><b><u>Please put &quot;Prog 7&quot; in the subject!</u></b><b>):</b></font></p>
+
+<blockquote>
+    <p><font size="2" face="Century Schoolbook">A copy of your
+    programs - for full credit, the code should be documented and
+    styled as described in the lecture notes. To do this type </font><font
+    size="2" face="Courier New">MAIL /SUBJECT=&quot;Prog 7&quot;
+    prog7.c</font><font size="2" face="Century Schoolbook"> at the prompt. When
+    the system responds with </font><font size="2"
+    face="Courier New">To:</font><font size="2"
+    face="Century Schoolbook">, type </font><font size="2"
+    face="Courier New">sstrenn@west.net</font></p>
+    <p><font size="2" face="Century Schoolbook">Same for</font><font
+    size="2" face="Courier New"> matrix.c</font><font size="2"
+    face="Century Schoolbook"> and </font><font size="2"
+    face="Courier New">matrix.h.</font></p>
+    <p><font size="2" face="Century Schoolbook">A copy of
+    prog7out.dat. Follow the email procedure described above, but
+    replace </font><font size="2" face="Courier New">prog7.c</font><font
+    size="2" face="Century Schoolbook"> with </font><font
+    size="2" face="Courier New">prog7out.dat</font><font size="2"
+    face="Century Schoolbook">.</font></p>
+</blockquote>
+
+<hr>
+
+<p><font face="Century Schoolbook"><b>MATRIX MATH / FUNCTIONS:</b></font></p>
+
+<p><font size="2" face="Century Schoolbook">Use the examples
+below to check that your program works. <b>Do not turn the
+results from these examples in!</b></font></p>
+
+<blockquote>
+    <p><font size="2" face="Courier New">MatPrint</font><font
+    size="2" face="Century Schoolbook">: the output should look
+    at least this good:</font></p>
+</blockquote>
+
+<blockquote>
+    <p><font size="2" face="Courier New">[ 2.100 -1.000 5.500 ]<br>
+    [ 6.100 3.230 -11.600 ]<br>
+    [ 4.000 9.700 7.200 ]</font></p>
+</blockquote>
+
+<p><font size="2" face="Courier New">&nbsp;</font></p>
+
+<p><font size="2" face="Courier New">MatScalarAdd</font><font
+size="2" face="Century Schoolbook"> - For example:</font></p>
+
+<blockquote>
+    <p><font size="2" face="Century Schoolbook">if <img
+    src="prgass66.gif" align="middle" width="168" height="78">
+    and </font><font size="2" face="Courier New">dScalar = 2.3</font><font
+    size="2" face="Century Schoolbook"> then <img
+    src="prgass67.gif" align="middle" width="211" height="78">.</font></p>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatScalarMult - For </font><font
+size="2" face="Century Schoolbook">example</font><font size="2"
+face="Courier New">:</font><font size="2"
+face="Century Schoolbook"> </font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook">if <img
+        src="prgass68.gif" align="middle" width="168" height="78">
+        and </font><font size="2" face="Courier New">dScalar =
+        2.3</font><font size="2" face="Century Schoolbook"> then <img
+        src="prgass69.gif" align="middle" width="168" height="78">.</font></p>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatSum</font><font size="2"
+face="Century Schoolbook"> - For example:</font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook">if <img
+        src="prgass70.gif" align="middle" width="168" height="78">
+        then 25.23 is returned.</font></p>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatAdd -</font><font
+size="2" face="Century Schoolbook"> <img src="prgass71.gif"
+align="absmiddle" width="88" height="26">. For example:</font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook">if <img
+        src="prgass72.gif" align="middle" width="160" height="78">
+        and <img src="prgass73.gif" align="middle" width="160"
+        height="78"> then <img src="prgass74.gif" align="middle"
+        width="155" height="78"></font></p>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Courier New">MatMult </font><font
+size="2" face="Century Schoolbook">- <img src="prgass75.gif"
+align="middle" width="96" height="48">. For example: </font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook">if <img
+        src="prgass76.gif" align="middle" width="160" height="78">
+        and <img src="prgass77.gif" align="middle" width="160"
+        height="78"> then <img src="prgass78.gif" align="middle"
+        width="166" height="78"></font></p>
+        <p><font size="2" face="Century Schoolbook">&nbsp;</font></p>
+    </blockquote>
+</blockquote>
+
+<p><font size="2" face="Century Schoolbook">MatTranspose - <img
+src="prgass79.gif" align="absmiddle" width="60" height="28">. For
+example:</font></p>
+
+<blockquote>
+    <blockquote>
+        <p><font size="2" face="Century Schoolbook">if <img
+        src="prgass80.gif" align="middle" width="160" height="78">
+        then <img src="prgass81.gif" align="middle" width="171"
+        height="78">.</font></p>
+        <p><font size="2" face="Century Schoolbook">&nbsp;</font></p>
+    </blockquote>
+</blockquote>
+</body>
+</html>

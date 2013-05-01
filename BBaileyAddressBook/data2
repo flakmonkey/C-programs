@@ -1,0 +1,9 @@
+LastName,FirstName,Email1,Email2,Notes
+6
+SMITH,AUNDREA,asmith@ign.com,asmith@yahoo.com,"Lorem ipsum 
+Next line, not splitting on commas"
+JOHNSON,ROSALIA,rjohnson@pricegrabber.com,rj@hotmail.com,"comment2"
+WILLIAMS,SACHIKO,swilliams@about.com,sw@gmail.com,"comment3"
+JONES,MARCO,mjones@fixya.com,mjones@apple.com,"comment4"
+BROWN,ASLEY,abrown@angelfire.com,ab@sbcc.edu,"comment5"
+DE LA GUERRA,MUNDO,mdelaguerra@yahoo.com,mdlg@apple.com,"comment6"
